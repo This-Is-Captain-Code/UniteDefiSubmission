@@ -1,0 +1,141 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bridgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563EB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D2FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#backgroundGradient)"/>
+  
+  <!-- Background Network Pattern -->
+  <g opacity="0.1">
+    <pattern id="networkPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="50" cy="50" r="2" fill="url(#bridgeGradient)"/>
+      <line x1="50" y1="50" x2="100" y2="50" stroke="url(#bridgeGradient)" stroke-width="1"/>
+      <line x1="50" y1="50" x2="50" y2="100" stroke="url(#bridgeGradient)" stroke-width="1"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#networkPattern)"/>
+  </g>
+  
+  <!-- Main Bridge Structure -->
+  <g transform="translate(200, 250)">
+    <!-- Left Tower (Ethereum) -->
+    <rect x="0" y="0" width="20" height="100" fill="url(#bridgeGradient)" filter="url(#glow)"/>
+    <rect x="-10" y="-10" width="40" height="20" rx="4" fill="url(#bridgeGradient)"/>
+    
+    <!-- Right Tower (Sui) -->
+    <rect x="780" y="0" width="20" height="100" fill="url(#bridgeGradient)" filter="url(#glow)"/>
+    <rect x="770" y="-10" width="40" height="20" rx="4" fill="url(#bridgeGradient)"/>
+    
+    <!-- Bridge Deck -->
+    <path d="M20 40 Q400 20 780 40" stroke="url(#bridgeGradient)" stroke-width="8" fill="none" filter="url(#strongGlow)"/>
+    <path d="M20 50 Q400 30 780 50" stroke="url(#bridgeGradient)" stroke-width="4" fill="none" opacity="0.7"/>
+    
+    <!-- Support Cables -->
+    <line x1="10" y1="10" x2="200" y2="35" stroke="url(#bridgeGradient)" stroke-width="2" opacity="0.8"/>
+    <line x1="10" y1="10" x2="400" y2="40" stroke="url(#bridgeGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="10" y1="10" x2="600" y2="45" stroke="url(#bridgeGradient)" stroke-width="2" opacity="0.4"/>
+    
+    <line x1="790" y1="10" x2="600" y2="35" stroke="url(#bridgeGradient)" stroke-width="2" opacity="0.8"/>
+    <line x1="790" y1="10" x2="400" y2="40" stroke="url(#bridgeGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="790" y1="10" x2="200" y2="45" stroke="url(#bridgeGradient)" stroke-width="2" opacity="0.4"/>
+  </g>
+  
+  <!-- Network Logos -->
+  <!-- Ethereum Logo -->
+  <g transform="translate(150, 400)">
+    <circle cx="50" cy="50" r="45" fill="rgba(98, 126, 234, 0.2)" stroke="url(#bridgeGradient)" stroke-width="2"/>
+    <polygon points="50,20 70,52 50,62 30,52" fill="#627EEA" filter="url(#glow)"/>
+    <polygon points="50,68 70,58 50,90 30,58" fill="#627EEA" opacity="0.8"/>
+    <text x="50" y="120" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Ethereum</text>
+  </g>
+  
+  <!-- Sui Logo -->
+  <g transform="translate(1000, 400)">
+    <circle cx="50" cy="50" r="45" fill="rgba(77, 169, 232, 0.2)" stroke="url(#bridgeGradient)" stroke-width="2"/>
+    <circle cx="50" cy="35" r="12" fill="#4DA9E8" filter="url(#glow)"/>
+    <circle cx="50" cy="55" r="10" fill="#4DA9E8" opacity="0.8"/>
+    <circle cx="40" cy="45" r="8" fill="#4DA9E8" opacity="0.9"/>
+    <circle cx="60" cy="45" r="8" fill="#4DA9E8" opacity="0.9"/>
+    <text x="50" y="120" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Sui Network</text>
+  </g>
+  
+  <!-- Center Logo -->
+  <g transform="translate(560, 180)">
+    <rect width="80" height="80" rx="12" fill="url(#bridgeGradient)" filter="url(#strongGlow)"/>
+    <text x="40" y="55" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">S</text>
+  </g>
+  
+  <!-- Title Text -->
+  <text x="600" y="120" text-anchor="middle" fill="url(#textGradient)" font-family="Arial, sans-serif" font-size="64" font-weight="bold" filter="url(#glow)">SuiBridge</text>
+  <text x="600" y="150" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" opacity="0.9">Production Cross-Chain Bridge Platform</text>
+  
+  <!-- Feature Highlights -->
+  <g transform="translate(100, 500)">
+    <rect width="250" height="80" rx="8" fill="rgba(6, 182, 212, 0.1)" stroke="url(#bridgeGradient)" stroke-width="1"/>
+    <text x="125" y="30" text-anchor="middle" fill="url(#textGradient)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Atomic Swaps</text>
+    <text x="125" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Zero Counterparty Risk</text>
+    <text x="125" y="65" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Cryptographic Security</text>
+  </g>
+  
+  <g transform="translate(380, 500)">
+    <rect width="250" height="80" rx="8" fill="rgba(37, 99, 235, 0.1)" stroke="url(#bridgeGradient)" stroke-width="1"/>
+    <text x="125" y="30" text-anchor="middle" fill="url(#textGradient)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Enterprise Ready</text>
+    <text x="125" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Production Infrastructure</text>
+    <text x="125" y="65" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">99.9% Uptime</text>
+  </g>
+  
+  <g transform="translate(660, 500)">
+    <rect width="250" height="80" rx="8" fill="rgba(6, 182, 212, 0.1)" stroke="url(#bridgeGradient)" stroke-width="1"/>
+    <text x="125" y="30" text-anchor="middle" fill="url(#textGradient)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Developer API</text>
+    <text x="125" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">RESTful Endpoints</text>
+    <text x="125" y="65" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Easy Integration</text>
+  </g>
+  
+  <g transform="translate(940, 500)">
+    <rect width="250" height="80" rx="8" fill="rgba(37, 99, 235, 0.1)" stroke="url(#bridgeGradient)" stroke-width="1"/>
+    <text x="125" y="30" text-anchor="middle" fill="url(#textGradient)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Real-time Tracking</text>
+    <text x="125" y="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Live Progress</text>
+    <text x="125" y="65" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Transaction History</text>
+  </g>
+  
+  <!-- Animated Transaction Flow -->
+  <g opacity="0.6">
+    <circle cx="280" cy="290" r="4" fill="#06B6D4">
+      <animate attributeName="cx" values="280;920;280" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="920" cy="290" r="4" fill="#2563EB">
+      <animate attributeName="cx" values="920;280;920" dur="4s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+  
+  <!-- Bottom Tagline -->
+  <text x="600" y="610" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" opacity="0.7">Secure • Fast • Decentralized Cross-Chain Infrastructure</text>
+</svg>

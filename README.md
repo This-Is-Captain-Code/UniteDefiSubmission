@@ -1,6 +1,13 @@
 # SuiBridge - Production Cross-Chain Bridge Platform
 
-![SuiBridge Logo](https://img.shields.io/badge/SuiBridge-Cross--Chain%20Bridge-00D2FF?style=for-the-badge&logo=blockchain&logoColor=white)
+<div align="center">
+  <img src="assets/logo.svg" alt="SuiBridge Logo" width="200" height="200">
+  
+  ![SuiBridge](https://img.shields.io/badge/SuiBridge-Cross--Chain%20Bridge-00D2FF?style=for-the-badge&logo=blockchain&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-Production%20Ready-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+  ![Ethereum](https://img.shields.io/badge/Ethereum-Compatible-627EEA?style=for-the-badge&logo=ethereum&logoColor=white)
+  ![Sui](https://img.shields.io/badge/Sui-Network-4DA9E8?style=for-the-badge&logoColor=white)
+</div>
 
 ## 🌉 Overview
 

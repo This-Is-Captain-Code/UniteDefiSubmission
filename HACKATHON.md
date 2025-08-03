@@ -1,5 +1,9 @@
 # SuiBridge - Hackathon Submission
 
+<div align="center">
+  <img src="assets/cover-image.svg" alt="SuiBridge Cover" width="800" height="420">
+</div>
+
 ## 🏆 Project Overview
 
 **Project Name**: SuiBridge - Production Cross-Chain Bridge Platform  
