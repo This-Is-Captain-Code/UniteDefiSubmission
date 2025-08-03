@@ -79,6 +79,7 @@ export default function SuiFusionDemo() {
           status: 'pending'
         }
       ];
+      console.log('Initializing swap steps:', steps);
       setSwapSteps(steps);
 
       // Simulate step progression
@@ -102,31 +103,39 @@ export default function SuiFusionDemo() {
 
   const simulateSwapProgress = (steps: SwapStep[]) => {
     let currentStep = 0;
-    const interval = setInterval(() => {
+    
+    const progressStep = () => {
+      setSwapSteps(prev => prev.map((step, index) => {
+        if (index === currentStep) {
+          return { 
+            ...step, 
+            status: 'completed', 
+            txHash: `0x${Math.random().toString(16).substr(2, 16)}`,
+            timestamp: new Date()
+          };
+        } else if (index === currentStep + 1) {
+          return { ...step, status: 'active' };
+        }
+        return step;
+      }));
+      
+      currentStep++;
+      
       if (currentStep < steps.length) {
-        setSwapSteps(prev => prev.map((step, index) => {
-          if (index === currentStep) {
-            return { 
-              ...step, 
-              status: 'completed', 
-              txHash: `0x${Math.random().toString(16).substr(2, 16)}`,
-              timestamp: new Date()
-            };
-          } else if (index === currentStep + 1 && currentStep + 1 < steps.length) {
-            return { ...step, status: 'active' };
-          }
-          return step;
-        }));
-        currentStep++;
+        setTimeout(progressStep, 2500);
       } else {
-        clearInterval(interval);
         // All steps completed - show success toast
-        toast({
-          title: "Swap Completed Successfully",
-          description: "Cross-chain swap has been completed and verified on both networks.",
-        });
+        setTimeout(() => {
+          toast({
+            title: "Swap Completed Successfully",
+            description: "Cross-chain swap has been completed and verified on both networks.",
+          });
+        }, 500);
       }
-    }, 2500); // Faster progression
+    };
+    
+    // Start the progression
+    setTimeout(progressStep, 2500);
   };
 
   const copyToClipboard = (text: string) => {
@@ -151,8 +160,11 @@ export default function SuiFusionDemo() {
   };
 
   const getOverallProgress = () => {
+    if (swapSteps.length === 0) return 0;
     const completedSteps = swapSteps.filter(step => step.status === 'completed').length;
-    return (completedSteps / swapSteps.length) * 100;
+    const progress = (completedSteps / swapSteps.length) * 100;
+    console.log(`Progress: ${completedSteps}/${swapSteps.length} = ${progress}%`);
+    return progress;
   };
 
   return (
