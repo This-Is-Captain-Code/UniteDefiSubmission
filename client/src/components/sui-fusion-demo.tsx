@@ -27,6 +27,7 @@ export default function SuiFusionDemo() {
   const [isInitiating, setIsInitiating] = useState(false);
   const [swapData, setSwapData] = useState<any>(null);
   const [swapSteps, setSwapSteps] = useState<SwapStep[]>([]);
+  const [currentProgress, setCurrentProgress] = useState(0);
   const { toast } = useToast();
 
   const initiateSwap = async () => {
@@ -81,6 +82,7 @@ export default function SuiFusionDemo() {
       ];
       console.log('Initializing swap steps:', steps);
       setSwapSteps(steps);
+      setCurrentProgress(0);
 
       // Simulate step progression
       simulateSwapProgress(steps);
@@ -103,10 +105,12 @@ export default function SuiFusionDemo() {
 
   const simulateSwapProgress = (steps: SwapStep[]) => {
     let currentStep = 0;
+    setCurrentProgress(0);
     
     const progressStep = () => {
       console.log(`Processing step ${currentStep + 1} of ${steps.length}`);
       
+      // Update the current step to completed
       setSwapSteps(prev => {
         const newSteps = prev.map((step, index) => {
           if (index === currentStep) {
@@ -117,7 +121,7 @@ export default function SuiFusionDemo() {
               txHash: `0x${Math.random().toString(16).substr(2, 16)}`,
               timestamp: new Date()
             };
-          } else if (index === currentStep + 1) {
+          } else if (index === currentStep + 1 && currentStep + 1 < steps.length) {
             console.log(`Activating step ${index + 1}: ${step.title}`);
             return { ...step, status: 'active' as const };
           }
@@ -127,6 +131,11 @@ export default function SuiFusionDemo() {
         return newSteps;
       });
       
+      // Update progress directly
+      const newProgress = Math.round(((currentStep + 1) / steps.length) * 100);
+      console.log(`Setting progress to ${newProgress}% (step ${currentStep + 1}/${steps.length})`);
+      setCurrentProgress(newProgress);
+      
       currentStep++;
       
       if (currentStep < steps.length) {
@@ -134,7 +143,6 @@ export default function SuiFusionDemo() {
         setTimeout(progressStep, 2500);
       } else {
         console.log('All steps completed, showing success toast');
-        // All steps completed - show success toast
         setTimeout(() => {
           toast({
             title: "Swap Completed Successfully",
@@ -171,12 +179,9 @@ export default function SuiFusionDemo() {
   };
 
   const getOverallProgress = () => {
-    if (swapSteps.length === 0) return 0;
-    const completedSteps = swapSteps.filter(step => step.status === 'completed').length;
-    const progress = Math.round((completedSteps / swapSteps.length) * 100);
-    console.log(`Progress calculation: ${completedSteps} completed steps out of ${swapSteps.length} total = ${progress}%`);
-    console.log('Current step statuses:', swapSteps.map(s => `${s.title}: ${s.status}`));
-    return progress;
+    // Use the directly managed progress instead of calculating from steps
+    console.log(`Returning current progress: ${currentProgress}%`);
+    return currentProgress;
   };
 
   return (
