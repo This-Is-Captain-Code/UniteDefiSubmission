@@ -105,25 +105,35 @@ export default function SuiFusionDemo() {
     let currentStep = 0;
     
     const progressStep = () => {
-      setSwapSteps(prev => prev.map((step, index) => {
-        if (index === currentStep) {
-          return { 
-            ...step, 
-            status: 'completed', 
-            txHash: `0x${Math.random().toString(16).substr(2, 16)}`,
-            timestamp: new Date()
-          };
-        } else if (index === currentStep + 1) {
-          return { ...step, status: 'active' };
-        }
-        return step;
-      }));
+      console.log(`Processing step ${currentStep + 1} of ${steps.length}`);
+      
+      setSwapSteps(prev => {
+        const newSteps = prev.map((step, index) => {
+          if (index === currentStep) {
+            console.log(`Completing step ${index + 1}: ${step.title}`);
+            return { 
+              ...step, 
+              status: 'completed' as const, 
+              txHash: `0x${Math.random().toString(16).substr(2, 16)}`,
+              timestamp: new Date()
+            };
+          } else if (index === currentStep + 1) {
+            console.log(`Activating step ${index + 1}: ${step.title}`);
+            return { ...step, status: 'active' as const };
+          }
+          return step;
+        });
+        console.log('Updated steps:', newSteps);
+        return newSteps;
+      });
       
       currentStep++;
       
       if (currentStep < steps.length) {
+        console.log(`Scheduling next step in 2.5 seconds`);
         setTimeout(progressStep, 2500);
       } else {
+        console.log('All steps completed, showing success toast');
         // All steps completed - show success toast
         setTimeout(() => {
           toast({
@@ -135,6 +145,7 @@ export default function SuiFusionDemo() {
     };
     
     // Start the progression
+    console.log('Starting swap progression with steps:', steps);
     setTimeout(progressStep, 2500);
   };
 
@@ -162,8 +173,9 @@ export default function SuiFusionDemo() {
   const getOverallProgress = () => {
     if (swapSteps.length === 0) return 0;
     const completedSteps = swapSteps.filter(step => step.status === 'completed').length;
-    const progress = (completedSteps / swapSteps.length) * 100;
-    console.log(`Progress: ${completedSteps}/${swapSteps.length} = ${progress}%`);
+    const progress = Math.round((completedSteps / swapSteps.length) * 100);
+    console.log(`Progress calculation: ${completedSteps} completed steps out of ${swapSteps.length} total = ${progress}%`);
+    console.log('Current step statuses:', swapSteps.map(s => `${s.title}: ${s.status}`));
     return progress;
   };
 
