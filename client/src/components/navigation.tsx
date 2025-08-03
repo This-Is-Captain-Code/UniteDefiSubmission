@@ -27,10 +27,10 @@ export default function Navigation() {
           
           <div className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('demo')}
+              onClick={() => scrollToSection('live-swaps')}
               className="text-gray-600 dark:text-gray-300 hover:text-cyan-500 transition-colors"
             >
-              Demo
+              Live Swaps
             </button>
             <button 
               onClick={() => scrollToSection('technology')}
@@ -50,7 +50,15 @@ export default function Navigation() {
             >
               Developers
             </button>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-90">
+            <Button 
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-90"
+              onClick={() => {
+                const tradingElement = document.getElementById('trading-interface');
+                if (tradingElement) {
+                  tradingElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Start Swapping
             </Button>
           </div>
@@ -71,16 +79,16 @@ export default function Navigation() {
                     Features
                   </button>
                   <button 
-                    onClick={() => scrollToSection('protocols')}
+                    onClick={() => scrollToSection('technology')}
                     className="text-left text-gray-600 dark:text-gray-300 hover:text-inch-blue transition-colors py-2"
                   >
-                    Protocols
+                    Technology
                   </button>
                   <button 
-                    onClick={() => scrollToSection('metrics')}
+                    onClick={() => scrollToSection('live-swaps')}
                     className="text-left text-gray-600 dark:text-gray-300 hover:text-inch-blue transition-colors py-2"
                   >
-                    Analytics
+                    Live Swaps
                   </button>
                   <button 
                     onClick={() => scrollToSection('developers')}
@@ -88,8 +96,17 @@ export default function Navigation() {
                   >
                     Developers
                   </button>
-                  <Button className="bg-gradient-to-r from-inch-blue to-inch-purple text-white w-full">
-                    Launch App
+                  <Button 
+                    className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white w-full"
+                    onClick={() => {
+                      const tradingElement = document.getElementById('trading-interface');
+                      if (tradingElement) {
+                        tradingElement.scrollIntoView({ behavior: 'smooth' });
+                      }
+                      setIsOpen(false);
+                    }}
+                  >
+                    Start Swapping
                   </Button>
                 </div>
               </SheetContent>
