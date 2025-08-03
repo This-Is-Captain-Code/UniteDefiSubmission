@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Code, Database, List, Copy } from "lucide-react";
+import { Code, Database, List, Copy, GitBranch } from "lucide-react";
 
 export default function DeveloperPortal() {
   const apiFeatures = [
@@ -11,10 +11,10 @@ export default function DeveloperPortal() {
       color: "from-inch-blue to-inch-purple"
     },
     {
-      icon: Database,
-      title: "Portfolio API",
-      description: "Real-time portfolio tracking with historical data, profit/loss calculations, and comprehensive token analytics.",
-      color: "from-purple-500 to-pink-500"
+      icon: GitBranch,
+      title: "Cross-Chain API",
+      description: "Fusion+ cross-chain swaps between Ethereum and Aptos with hashlock/timelock security. Bidirectional and atomic.",
+      color: "from-blue-500 to-teal-500"
     },
     {
       icon: List,
@@ -29,44 +29,46 @@ export default function DeveloperPortal() {
     "Hacken", "MixBytes", "Haechi Labs", "CoinFabrik"
   ];
 
-  const codeExample = `// Get best swap quote
-const response = await fetch(
-  'https://api.1inch.io/v5.0/1/quote?' +
-  'fromTokenAddress=0xA0b86a33E...&' +
-  'toTokenAddress=0xC02aaA39b...&' +
-  'amount=1000000000000000000'
-);
-
-const quote = await response.json();
-
-console.log({
-  toTokenAmount: quote.toTokenAmount,
-  estimatedGas: quote.estimatedGas,
-  protocols: quote.protocols
-});
-
-// Execute swap
-const swapResponse = await fetch(
-  'https://api.1inch.io/v5.0/1/swap',
+  const codeExample = `// Cross-chain swap from Ethereum to Aptos
+const crossChainSwap = await fetch(
+  'https://api.1inch.io/fusion-plus/v1/swap',
   {
     method: 'POST',
     body: JSON.stringify({
+      fromChain: 'ethereum',
+      toChain: 'aptos',
       fromTokenAddress: '0xA0b86a33E...',
-      toTokenAddress: '0xC02aaA39b...',
+      toTokenAddress: '0x1::aptos_coin::AptosCoin',
       amount: '1000000000000000000',
       fromAddress: userAddress,
+      toAddress: aptosAddress,
       slippage: 1
     })
   }
-);`;
+);
+
+const swapData = await crossChainSwap.json();
+
+// Monitor swap status
+const status = await fetch(
+  \`https://api.1inch.io/fusion-plus/v1/status/\${swapData.swapId}\`
+);
+
+console.log({
+  hashlock: swapData.hashlock,
+  timelock: swapData.timelock,
+  ethereumTx: swapData.ethereumTx,
+  aptosTx: swapData.aptosTx,
+  status: status.status
+});`;
 
   return (
-    <section id="developers" className="py-20 bg-white">
+    <section id="developers" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark mb-4">Build with 1inch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Integrate 1inch APIs to create fully functional dApps and wallets with real-time pricing, limit orders, and portfolio tracking.
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Build with 1inch Hackathon APIs</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Integrate cross-chain Fusion+ APIs for Ethereum-Aptos swaps with hashlock/timelock security. Perfect for the hackathon challenge.
           </p>
         </div>
 
@@ -79,8 +81,8 @@ const swapResponse = await fetch(
                   <feature.icon className="text-white" size={20} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                 </div>
               </div>
             ))}
@@ -88,9 +90,9 @@ const swapResponse = await fetch(
             <div className="pt-6">
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="bg-gradient-to-r from-inch-blue to-inch-purple text-white hover:opacity-90">
-                  View Documentation
+                  Hackathon Docs
                 </Button>
-                <Button variant="outline" className="border-2 border-inch-blue text-inch-blue hover:bg-inch-blue hover:text-white">
+                <Button variant="outline" className="border-2 border-inch-blue text-inch-blue hover:bg-inch-blue hover:text-white dark:text-white dark:hover:text-inch-blue">
                   Get API Key
                 </Button>
               </div>
@@ -101,7 +103,7 @@ const swapResponse = await fetch(
           <Card className="bg-gray-900 overflow-x-auto">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-gray-400 text-sm">JavaScript Example</span>
+                <span className="text-gray-400 text-sm">Fusion+ Cross-Chain Example</span>
                 <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white h-8 w-8">
                   <Copy size={16} />
                 </Button>
@@ -113,15 +115,45 @@ const swapResponse = await fetch(
           </Card>
         </div>
 
-        {/* Security & Audits */}
-        <Card className="mt-16 bg-gray-50">
+        {/* Hackathon Requirements */}
+        <Card className="mt-16 bg-gradient-to-r from-inch-blue/10 to-inch-purple/10 dark:from-inch-blue/20 dark:to-inch-purple/20">
           <CardContent className="p-8">
-            <h3 className="text-2xl font-bold text-center text-inch-dark mb-8">Security & Audits</h3>
+            <h3 className="text-2xl font-bold text-center text-inch-dark dark:text-white mb-8">Hackathon Track 1 Requirements</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">✓</span>
+                </div>
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Hashlock & Timelock</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Preserve security mechanisms for non-EVM implementation</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">⟷</span>
+                </div>
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Bidirectional Swaps</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Enable swaps to and from Ethereum & Aptos</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">⚡</span>
+                </div>
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Onchain Execution</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Live demo with mainnet/testnet deployment</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Security & Audits */}
+        <Card className="mt-16 bg-gray-50 dark:bg-gray-800">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-bold text-center text-inch-dark dark:text-white mb-8">Security & Audits</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 text-center">
               {auditors.map((auditor, index) => (
-                <Card key={index} className="bg-white shadow-sm hover:shadow-md transition-shadow">
+                <Card key={index} className="bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-shadow">
                   <CardContent className="p-4">
-                    <div className="font-semibold text-gray-700">{auditor}</div>
+                    <div className="font-semibold text-gray-700 dark:text-gray-300">{auditor}</div>
                   </CardContent>
                 </Card>
               ))}

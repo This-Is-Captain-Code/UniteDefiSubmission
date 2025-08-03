@@ -2,11 +2,11 @@ import { Card } from "@/components/ui/card";
 
 export default function Footer() {
   const productLinks = [
-    "1inch dApp", "1inch Wallet", "Limit Orders", "Fusion Mode", "Portfolio Tracker"
+    "1inch dApp", "1inch Wallet", "Limit Orders", "Fusion Mode", "Cross-Chain Swaps"
   ];
 
   const developerLinks = [
-    "Documentation", "API Reference", "GitHub", "Bug Bounty", "Audits"
+    "Documentation", "API Reference", "GitHub", "Bug Bounty", "Hackathon"
   ];
 
   const communityLinks = [
@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="text-xl font-bold">1inch Protocol</span>
             </div>
             <p className="text-gray-400">
-              Uniting DeFi protocols for the most lucrative, fastest, and protected operations in decentralized finance.
+              Uniting DeFi protocols for the most lucrative, fastest, and protected operations in decentralized finance. Now with cross-chain capabilities to Aptos.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

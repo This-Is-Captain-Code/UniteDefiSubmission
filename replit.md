@@ -1,6 +1,6 @@
 # Overview
 
-This is a 1inch Protocol-inspired DeFi aggregation platform built with a full-stack TypeScript architecture. The application showcases a modern decentralized finance interface featuring token swapping, multi-chain support, analytics dashboards, and developer tools. It demonstrates advanced pathfinding algorithms for optimal trading routes across multiple DEX protocols, with features like gasless trading, MEV protection, and comprehensive portfolio tracking.
+This is a 1inch Protocol hackathon project for Track 1: Extending Fusion+ to Aptos. Built with a full-stack TypeScript architecture, the application showcases cross-chain swaps between Ethereum and Aptos using hashlock/timelock security mechanisms. The project demonstrates bidirectional atomic swaps, modern DeFi interface design, analytics dashboards, and comprehensive developer tools for the hackathon requirements.
 
 # User Preferences
 
@@ -31,10 +31,11 @@ Preferred communication style: Simple, everyday language.
 - **Connection**: Neon Database serverless PostgreSQL for production deployment
 
 ## Key Features Implementation
-- **Metrics Dashboard**: Real-time trading metrics with API endpoints for volume, users, and protocol statistics
-- **Multi-chain Support**: UI components showcasing support for 15+ blockchain networks
-- **Trading Interface**: Mock trading interface demonstrating token swap functionality
-- **Developer Portal**: Documentation-style components for API integration examples
+- **Cross-Chain Swaps**: Ethereum-Aptos bidirectional swaps with hashlock/timelock security
+- **Hackathon Requirements**: Complete implementation of Track 1 qualification requirements
+- **Trading Interface**: Cross-chain swap interface showcasing Fusion+ technology
+- **Developer Portal**: Hackathon-focused API documentation and code examples
+- **Multi-chain Support**: UI components highlighting Aptos integration alongside other networks
 - **Responsive Design**: Mobile-first design with glassmorphism effects and modern animations
 
 ## Build and Deployment

@@ -7,8 +7,8 @@ export default function FeaturesSection() {
       icon: Network,
       title: "Aggregation Protocol",
       description: "Advanced Pathfinder Algorithm finds the best possible paths for token swaps by sourcing liquidity from multiple DEXs in the shortest possible time.",
-      gradient: "from-blue-50 to-purple-50",
-      borderColor: "border-blue-100",
+      gradient: "from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950",
+      borderColor: "border-blue-100 dark:border-blue-800",
       iconGradient: "from-inch-blue to-inch-purple",
       benefits: [
         "Multi-DEX sourcing",
@@ -20,8 +20,8 @@ export default function FeaturesSection() {
       icon: List,
       title: "Limit Order Protocol",
       description: "The most innovative and flexible limit order swap opportunities in DeFi with zero fees and advanced conditional features.",
-      gradient: "from-purple-50 to-pink-50",
-      borderColor: "border-purple-100",
+      gradient: "from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950",
+      borderColor: "border-purple-100 dark:border-purple-800",
       iconGradient: "from-inch-purple to-pink-500",
       benefits: [
         "Zero fees",
@@ -33,8 +33,8 @@ export default function FeaturesSection() {
       icon: Shield,
       title: "Fusion Mode",
       description: "Gasless trading with MEV protection. Professional market makers execute swaps efficiently while protecting users from MEV attacks.",
-      gradient: "from-green-50 to-teal-50",
-      borderColor: "border-green-100",
+      gradient: "from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950",
+      borderColor: "border-green-100 dark:border-green-800",
       iconGradient: "from-green-500 to-teal-500",
       benefits: [
         "Gasless execution",
@@ -45,11 +45,11 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-20 bg-white">
+    <section id="features" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark mb-4">Three Protocols, One Ecosystem</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Three Protocols, One Ecosystem</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             1inch Network unites decentralized protocols whose synergy enables the most optimized DeFi operations
           </p>
         </div>
@@ -61,11 +61,11 @@ export default function FeaturesSection() {
                 <div className={`w-16 h-16 bg-gradient-to-r ${feature.iconGradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                   <feature.icon className="text-white text-2xl" size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-inch-dark mb-4">{feature.title}</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-inch-dark dark:text-white mb-4">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
                   {feature.description}
                 </p>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                   {feature.benefits.map((benefit, benefitIndex) => (
                     <li key={benefitIndex} className="flex items-center">
                       <Check className="text-green-500 mr-2" size={16} />

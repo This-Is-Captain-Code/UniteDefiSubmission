@@ -54,11 +54,11 @@ export default function MetricsDashboard() {
   ];
 
   return (
-    <section id="metrics" className="py-20 bg-gray-50">
+    <section id="metrics" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark mb-4">Protocol Performance</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Protocol Performance</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Real-time metrics showcasing 1inch protocol efficiency
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function MetricsDashboard() {
         {/* Key Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {metricCards.map((metric, index) => (
-            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow">
+            <Card key={index} className="bg-white dark:bg-gray-900 shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className={`w-12 h-12 bg-gradient-to-r ${metric.color} rounded-lg flex items-center justify-center`}>
@@ -74,8 +74,8 @@ export default function MetricsDashboard() {
                   </div>
                   <span className={`text-sm ${metric.changeColor} font-medium`}>{metric.change}</span>
                 </div>
-                <div className="text-2xl font-bold text-gray-800">{metric.value}</div>
-                <div className="text-gray-600">{metric.label}</div>
+                <div className="text-2xl font-bold text-gray-800 dark:text-gray-200">{metric.value}</div>
+                <div className="text-gray-600 dark:text-gray-400">{metric.label}</div>
               </CardContent>
             </Card>
           ))}
@@ -84,10 +84,10 @@ export default function MetricsDashboard() {
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Volume Chart */}
-          <Card className="bg-white shadow-lg">
+          <Card className="bg-white dark:bg-gray-900 shadow-lg">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Trading Volume (7 Days)</h3>
-              <div className="h-64 bg-gray-50 rounded-lg flex items-end justify-around p-4">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6">Trading Volume (7 Days)</h3>
+              <div className="h-64 bg-gray-50 dark:bg-gray-800 rounded-lg flex items-end justify-around p-4">
                 {/* Mock Bar Chart */}
                 {[32, 28, 36, 24, 40, 48, 44].map((height, index) => (
                   <div 
@@ -101,20 +101,20 @@ export default function MetricsDashboard() {
           </Card>
 
           {/* Protocol Distribution */}
-          <Card className="bg-white shadow-lg">
+          <Card className="bg-white dark:bg-gray-900 shadow-lg">
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Protocol Usage Distribution</h3>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6">Protocol Usage Distribution</h3>
               <div className="space-y-4">
                 {protocolData.map((protocol, index) => (
                   <div key={index}>
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center space-x-3">
                         <div className={`w-4 h-4 ${protocol.color} rounded-full`}></div>
-                        <span>{protocol.name}</span>
+                        <span className="text-gray-800 dark:text-gray-200">{protocol.name}</span>
                       </div>
-                      <span className="font-semibold">{protocol.percentage}%</span>
+                      <span className="font-semibold text-gray-800 dark:text-gray-200">{protocol.percentage}%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <div 
                         className={`${protocol.color} h-2 rounded-full transition-all duration-500`}
                         style={{ width: `${protocol.percentage}%` }}
