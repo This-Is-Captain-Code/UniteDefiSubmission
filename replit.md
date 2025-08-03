@@ -1,6 +1,16 @@
 # Overview
 
-This is a comprehensive 1inch Protocol hackathon project showcasing all 7 tracks for extending Fusion+ cross-chain swaps. Built with a full-stack TypeScript architecture, the application demonstrates cross-chain swap capabilities between Ethereum and multiple non-EVM blockchains (Aptos, Bitcoin family, Cosmos, Near, Sui, Tron, Stellar) using hashlock/timelock security mechanisms. The project features bidirectional atomic swaps, strategic track analysis with Sui as the recommended choice, modern DeFi interface design, analytics dashboards, and comprehensive developer tools covering all hackathon tracks.
+This is a comprehensive 1inch Protocol hackathon project implementing Track 5 (Sui) - a complete Fusion+ cross-chain swap solution between Ethereum and Sui Network. Built with a full-stack TypeScript architecture, the application features working smart contracts (Sui Move & Ethereum Solidity), real-time swap execution, bidirectional atomic swaps with hashlock/timelock security, live demo interface, comprehensive analytics, and production-ready implementation showcasing the winning strategy for the hackathon.
+
+## Recent Changes
+
+**January 3, 2025**
+- ✅ **Complete Sui Implementation**: Full smart contract suite with Move language contracts and Ethereum integration
+- ✅ **Working Cross-Chain Swaps**: Live API endpoints for Ethereum ↔ Sui swaps with real hashlock/timelock functionality  
+- ✅ **Interactive Demo Interface**: Real-time swap progress tracking, transaction history, and step-by-step execution
+- ✅ **Database Integration**: PostgreSQL schema for swap tracking, metrics, and historical data
+- ✅ **Production Backend**: Complete REST API with swap initiation, monitoring, and completion endpoints
+- ✅ **Security Implementation**: SHA-256 hashlock, 24-hour timelock, atomic operations, refund protection
 
 # User Preferences
 

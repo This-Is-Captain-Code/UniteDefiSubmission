@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import TrackRecommendation from "@/components/track-recommendation";
+import SuiFusionDemo from "@/components/sui-fusion-demo";
 import HackathonTracks from "@/components/hackathon-tracks";
 import FeaturesSection from "@/components/features-section";
 import MultichainSection from "@/components/multichain-section";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <TrackRecommendation />
+      <SuiFusionDemo />
       <HackathonTracks />
       <FeaturesSection />
       <MultichainSection />
