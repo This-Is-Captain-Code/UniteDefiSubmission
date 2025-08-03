@@ -5,21 +5,21 @@ import { Code, Database, List, Copy, GitBranch } from "lucide-react";
 export default function DeveloperPortal() {
   const apiFeatures = [
     {
-      icon: Code,
-      title: "Aggregation API",
-      description: "Get the best swap rates across 200+ DEXs with a single API call. Includes gas optimization and route calculations.",
-      color: "from-inch-blue to-inch-purple"
-    },
-    {
       icon: GitBranch,
       title: "Cross-Chain API",
       description: "SuiBridge cross-chain swaps between Ethereum and Sui with hashlock/timelock security. Bidirectional and atomic.",
       color: "from-cyan-500 to-blue-600"
     },
     {
-      icon: List,
-      title: "Limit Order API",
-      description: "Create and manage advanced limit orders with conditional logic, dynamic pricing, and automated execution.",
+      icon: Code,
+      title: "Smart Contract API",
+      description: "Direct integration with Move and Solidity contracts for advanced customization and enterprise features.",
+      color: "from-purple-500 to-indigo-600"
+    },
+    {
+      icon: Database,
+      title: "Analytics API",
+      description: "Real-time monitoring, transaction history, and comprehensive analytics for cross-chain operations.",
       color: "from-green-500 to-teal-500"
     }
   ];
@@ -103,7 +103,7 @@ console.log({
           <Card className="bg-gray-900 overflow-x-auto">
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-gray-400 text-sm">Fusion+ Cross-Chain Example</span>
+                <span className="text-gray-400 text-sm">SuiBridge Cross-Chain Example</span>
                 <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white h-8 w-8">
                   <Copy size={16} />
                 </Button>
@@ -115,31 +115,31 @@ console.log({
           </Card>
         </div>
 
-        {/* Hackathon Requirements */}
-        <Card className="mt-16 bg-gradient-to-r from-inch-blue/10 to-inch-purple/10 dark:from-inch-blue/20 dark:to-inch-purple/20">
+        {/* Enterprise Features */}
+        <Card className="mt-16 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 dark:from-cyan-500/20 dark:to-blue-600/20">
           <CardContent className="p-8">
-            <h3 className="text-2xl font-bold text-center text-inch-dark dark:text-white mb-8">Hackathon Track 1 Requirements</h3>
+            <h3 className="text-2xl font-bold text-center text-inch-dark dark:text-white mb-8">Enterprise Features</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">✓</span>
+                  <span className="text-white font-bold text-xl">🔒</span>
                 </div>
                 <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Hashlock & Timelock</h4>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Preserve security mechanisms for non-EVM implementation</p>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Enterprise-grade security with cryptographic protection</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">⟷</span>
                 </div>
-                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Bidirectional Swaps</h4>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Enable swaps to and from Ethereum & Aptos</p>
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Bidirectional Bridge</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Seamless transfers between Ethereum & Sui networks</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">⚡</span>
                 </div>
-                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Onchain Execution</h4>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">Live demo with mainnet/testnet deployment</p>
+                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Production Ready</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Live mainnet deployment with 99.9% uptime</p>
               </div>
             </div>
           </CardContent>

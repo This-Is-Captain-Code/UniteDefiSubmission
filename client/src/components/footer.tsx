@@ -6,7 +6,7 @@ export default function Footer() {
   ];
 
   const developerLinks = [
-    "Smart Contracts", "API Reference", "GitHub", "Technical Docs", "Hackathon"
+    "Smart Contracts", "API Reference", "GitHub", "Technical Docs", "Integration"
   ];
 
   const communityLinks = [

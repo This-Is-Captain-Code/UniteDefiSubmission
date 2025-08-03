@@ -7,28 +7,28 @@ import { ArrowDownUp, ChevronDown, Clock, Shield } from "lucide-react";
 
 export default function TradingInterface() {
   const [fromAmount, setFromAmount] = useState("1000");
-  const [toAmount, setToAmount] = useState("0.298");
-  const [selectedTrack, setSelectedTrack] = useState("track1");
+  const [toAmount, setToAmount] = useState("850.0");
+  const [fromToken, setFromToken] = useState("USDC");
+  const [toToken, setToToken] = useState("SUI");
 
-  const tracks = {
-    track1: { name: "Aptos", symbol: "APT", color: "from-blue-500 to-teal-500", amount: "0.298" },
-    track2: { name: "Bitcoin", symbol: "BTC", color: "from-orange-500 to-yellow-500", amount: "0.025" },
-    track3: { name: "Cosmos", symbol: "ATOM", color: "from-purple-500 to-pink-500", amount: "42.5" },
-    track4: { name: "Near", symbol: "NEAR", color: "from-green-500 to-blue-500", amount: "125.0" },
-    track5: { name: "Sui", symbol: "SUI", color: "from-cyan-500 to-blue-600", amount: "850.0" },
-    track6: { name: "Tron", symbol: "TRX", color: "from-red-500 to-orange-500", amount: "15000" },
-    track7: { name: "Stellar", symbol: "XLM", color: "from-indigo-500 to-purple-600", amount: "8500" }
+  const supportedTokens = {
+    ethereum: { name: "Ethereum", symbol: "ETH", color: "from-blue-500 to-purple-600", amount: "2.45", network: "Ethereum" },
+    usdc: { name: "USD Coin", symbol: "USDC", color: "from-blue-400 to-blue-600", amount: "5000", network: "Ethereum" },
+    usdt: { name: "Tether", symbol: "USDT", color: "from-green-500 to-teal-500", amount: "4800", network: "Ethereum" },
+    dai: { name: "Dai", symbol: "DAI", color: "from-orange-500 to-yellow-500", amount: "4950", network: "Ethereum" },
+    sui: { name: "Sui", symbol: "SUI", color: "from-cyan-500 to-blue-600", amount: "850.0", network: "Sui" },
+    weth: { name: "Wrapped ETH", symbol: "WETH", color: "from-indigo-500 to-purple-600", amount: "2.40", network: "Ethereum" }
   };
 
-  const currentTrack = tracks[selectedTrack as keyof typeof tracks];
+  const getCurrentToken = (tokenKey: string) => supportedTokens[tokenKey as keyof typeof supportedTokens] || supportedTokens.usdc;
 
   return (
     <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Multi-Track Cross-Chain Swaps</h2>
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Ethereum ↔ Sui Bridge</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Experience Fusion+ technology across all hackathon tracks: Aptos, Bitcoin, Cosmos, and Near
+            Seamless cross-chain swaps with atomic security and instant settlement
           </p>
         </div>
 
@@ -40,20 +40,10 @@ export default function TradingInterface() {
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-bold text-inch-dark dark:text-white">Cross-Chain Swap</h3>
-                    <Select value={selectedTrack} onValueChange={setSelectedTrack}>
-                      <SelectTrigger className="w-32">
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="track1">Track 1: Aptos</SelectItem>
-                        <SelectItem value="track2">Track 2: Bitcoin</SelectItem>
-                        <SelectItem value="track3">Track 3: Cosmos</SelectItem>
-                        <SelectItem value="track4">Track 4: Near</SelectItem>
-                        <SelectItem value="track5">Track 5: Sui ⭐ RECOMMENDED</SelectItem>
-                        <SelectItem value="track6">Track 6: Tron</SelectItem>
-                        <SelectItem value="track7">Track 7: Stellar</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                      <Shield className="w-4 h-4" />
+                      <span>Atomic Security</span>
+                    </div>
                   </div>
                   
                   {/* From Token */}
@@ -82,7 +72,7 @@ export default function TradingInterface() {
 
                   {/* Swap Arrow */}
                   <div className="flex justify-center">
-                    <Button className="w-12 h-12 bg-gradient-to-r from-inch-blue to-inch-purple rounded-full p-0 hover:scale-110 transition-transform">
+                    <Button className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full p-0 hover:scale-110 transition-transform">
                       <ArrowDownUp className="text-white" size={20} />
                     </Button>
                   </div>
@@ -91,20 +81,20 @@ export default function TradingInterface() {
                   <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                     <CardContent className="p-6">
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-gray-600 dark:text-gray-300">To ({currentTrack.name})</span>
+                        <span className="text-gray-600 dark:text-gray-300">To (Sui Network)</span>
                         <span className="text-sm text-gray-500 dark:text-gray-400">Balance: 124.5</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <Input 
                           type="text" 
                           placeholder="0.0" 
-                          value={currentTrack.amount}
+                          value={toAmount}
                           onChange={(e) => setToAmount(e.target.value)}
                           className="text-2xl font-semibold bg-transparent border-none outline-none p-0 h-auto text-gray-900 dark:text-white"
                         />
                         <div className="flex items-center space-x-2 bg-gray-100 dark:bg-gray-700 rounded-lg px-3 py-2 cursor-pointer">
-                          <div className={`w-6 h-6 bg-gradient-to-r ${currentTrack.color} rounded-full`}></div>
-                          <span className="font-semibold text-gray-900 dark:text-white">{currentTrack.symbol}</span>
+                          <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"></div>
+                          <span className="font-semibold text-gray-900 dark:text-white">SUI</span>
                           <ChevronDown className="text-gray-400" size={16} />
                         </div>
                       </div>
@@ -112,14 +102,14 @@ export default function TradingInterface() {
                   </Card>
 
                   {/* Swap Button */}
-                  <Button className="w-full bg-gradient-to-r from-inch-blue to-inch-purple text-white py-4 text-lg font-semibold hover:opacity-90 transition-opacity">
+                  <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 text-lg font-semibold hover:opacity-90 transition-opacity">
                     Initiate Cross-Chain Swap
                   </Button>
                 </div>
 
                 {/* Route Visualization */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-inch-dark dark:text-white">Fusion+ Route</h3>
+                  <h3 className="text-2xl font-bold text-inch-dark dark:text-white">Bridge Route</h3>
                   
                   {/* Route Steps */}
                   <div className="space-y-4">
@@ -127,7 +117,7 @@ export default function TradingInterface() {
                       <CardContent className="p-4">
                         <div className="flex items-center justify-between mb-2">
                           <span className="font-semibold text-green-800 dark:text-green-200">Best Cross-Chain Rate</span>
-                          <span className="text-green-600 dark:text-green-400 font-bold">{currentTrack.amount} {currentTrack.symbol}</span>
+                          <span className="text-green-600 dark:text-green-400 font-bold">{toAmount} SUI</span>
                         </div>
                         <div className="text-sm text-green-600 dark:text-green-400">Hashlock & Timelock protected</div>
                       </CardContent>
@@ -135,20 +125,20 @@ export default function TradingInterface() {
 
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-inch-blue rounded-full"></div>
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                         <div className="flex-1">
                           <div className="font-medium text-gray-900 dark:text-white">Step 1: Lock on Ethereum</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">1000 USDC locked with hashlock</div>
+                          <div className="text-sm text-gray-500 dark:text-gray-400">{fromAmount} USDC locked with hashlock</div>
                         </div>
-                        <Clock className="text-inch-blue" size={16} />
+                        <Clock className="text-blue-500" size={16} />
                       </div>
                       <div className="flex items-center space-x-3">
-                        <div className="w-3 h-3 bg-inch-purple rounded-full"></div>
+                        <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
                         <div className="flex-1">
-                          <div className="font-medium text-gray-900 dark:text-white">Step 2: Lock on {currentTrack.name}</div>
-                          <div className="text-sm text-gray-500 dark:text-gray-400">{currentTrack.amount} {currentTrack.symbol} locked with same hash</div>
+                          <div className="font-medium text-gray-900 dark:text-white">Step 2: Lock on Sui</div>
+                          <div className="text-sm text-gray-500 dark:text-gray-400">{toAmount} SUI locked with same hash</div>
                         </div>
-                        <Shield className="text-inch-purple" size={16} />
+                        <Shield className="text-cyan-500" size={16} />
                       </div>
                       <div className="flex items-center space-x-3">
                         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
