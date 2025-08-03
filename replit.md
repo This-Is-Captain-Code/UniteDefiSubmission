@@ -1,6 +1,6 @@
 # Overview
 
-This is a 1inch Protocol hackathon project for Track 1: Extending Fusion+ to Aptos. Built with a full-stack TypeScript architecture, the application showcases cross-chain swaps between Ethereum and Aptos using hashlock/timelock security mechanisms. The project demonstrates bidirectional atomic swaps, modern DeFi interface design, analytics dashboards, and comprehensive developer tools for the hackathon requirements.
+This is a comprehensive 1inch Protocol hackathon project showcasing all 4 tracks for extending Fusion+ cross-chain swaps. Built with a full-stack TypeScript architecture, the application demonstrates cross-chain swap capabilities between Ethereum and multiple non-EVM blockchains (Aptos, Bitcoin family, Cosmos, Near) using hashlock/timelock security mechanisms. The project features bidirectional atomic swaps, modern DeFi interface design, analytics dashboards, and comprehensive developer tools covering all hackathon tracks.
 
 # User Preferences
 
@@ -31,11 +31,12 @@ Preferred communication style: Simple, everyday language.
 - **Connection**: Neon Database serverless PostgreSQL for production deployment
 
 ## Key Features Implementation
-- **Cross-Chain Swaps**: Ethereum-Aptos bidirectional swaps with hashlock/timelock security
-- **Hackathon Requirements**: Complete implementation of Track 1 qualification requirements
-- **Trading Interface**: Cross-chain swap interface showcasing Fusion+ technology
-- **Developer Portal**: Hackathon-focused API documentation and code examples
-- **Multi-chain Support**: UI components highlighting Aptos integration alongside other networks
+- **Multi-Track Cross-Chain Swaps**: Interactive demo supporting all 4 hackathon tracks (Aptos, Bitcoin family, Cosmos, Near)
+- **Comprehensive Hackathon Coverage**: Detailed implementation showcase for all track qualification requirements
+- **Dynamic Trading Interface**: Cross-chain swap interface with track selector showcasing Fusion+ technology across all chains
+- **Hackathon Track Overview**: Dedicated section explaining requirements, stretch goals, and security features for each track
+- **Developer Portal**: Multi-track API documentation and code examples for all supported blockchains
+- **Security Visualization**: Hashlock/timelock mechanism demonstrations across all supported chains
 - **Responsive Design**: Mobile-first design with glassmorphism effects and modern animations
 
 ## Build and Deployment

@@ -48,9 +48,9 @@ export default function FeaturesSection() {
     <section id="features" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Three Protocols, One Ecosystem</h2>
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Hackathon Track Features</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            1inch Network unites decentralized protocols whose synergy enables the most optimized DeFi operations
+            Cross-chain Fusion+ capabilities with hashlock/timelock security across all 4 hackathon tracks
           </p>
         </div>
 
