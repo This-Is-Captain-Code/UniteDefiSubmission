@@ -19,10 +19,10 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-inch-blue to-inch-purple rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">1</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">S</span>
             </div>
-            <span className="text-xl font-bold text-inch-dark dark:text-white">1inch Protocol</span>
+            <span className="text-xl font-bold text-inch-dark dark:text-white">SuiBridge</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -50,8 +50,8 @@ export default function Navigation() {
             >
               Developers
             </button>
-            <Button className="bg-gradient-to-r from-inch-blue to-inch-purple text-white hover:opacity-90">
-              Launch App
+            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-90">
+              Start Swapping
             </Button>
           </div>
           

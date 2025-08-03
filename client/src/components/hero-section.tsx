@@ -37,20 +37,20 @@ export default function HeroSection() {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Unite DeFi
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-purple-200">
-            Through 1inch
+          Sui<span className="text-cyan-300">Bridge</span>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-blue-200">
+            Cross-Chain Future
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-          The most lucrative, fastest and protected operations in DeFi. Aggregate liquidity from multiple DEXs and optimize your trades with our advanced pathfinding algorithm.
+          Revolutionary Ethereum ↔ Sui cross-chain swaps with hashlock security, atomic operations, and lightning-fast settlement powered by Fusion+ technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="bg-white text-inch-blue hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
-            Start Trading
+          <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-90 px-8 py-4 text-lg font-semibold">
+            Start Cross-Chain Swap
           </Button>
-          <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-inch-blue px-8 py-4 text-lg font-semibold">
-            Learn More
+          <Button size="lg" variant="outline" className="border-2 border-cyan-300 text-cyan-300 hover:bg-cyan-300 hover:text-gray-900 px-8 py-4 text-lg font-semibold">
+            View Demo
           </Button>
         </div>
         
@@ -58,21 +58,21 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <Card className="glassmorphism rounded-xl p-6 border-white/20">
             <div className="text-3xl font-bold text-white">
-              {metrics?.totalVolume || '$7.26B'}
+              {metrics?.totalVolume || '$2.1M'}
             </div>
-            <div className="text-gray-300">24h Volume Record</div>
+            <div className="text-gray-300">Cross-Chain Volume</div>
           </Card>
           <Card className="glassmorphism rounded-xl p-6 border-white/20">
             <div className="text-3xl font-bold text-white">
-              {metrics?.supportedChains || '15+'}
+              <span className="text-cyan-300">2</span> Chains
             </div>
-            <div className="text-gray-300">Supported Chains</div>
+            <div className="text-gray-300">Ethereum ↔ Sui</div>
           </Card>
           <Card className="glassmorphism rounded-xl p-6 border-white/20">
             <div className="text-3xl font-bold text-white">
-              {metrics?.dexProtocols || '200+'}
+              24<span className="text-cyan-300">h</span>
             </div>
-            <div className="text-gray-300">DEX Protocols</div>
+            <div className="text-gray-300">Timelock Security</div>
           </Card>
         </div>
       </div>

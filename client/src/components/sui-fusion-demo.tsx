@@ -156,12 +156,12 @@ export default function SuiFusionDemo() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-              5
+              S
             </div>
-            <h2 className="text-4xl font-bold text-inch-dark dark:text-white">Live Sui Fusion+ Demo</h2>
+            <h2 className="text-4xl font-bold text-inch-dark dark:text-white">SuiBridge Live Demo</h2>
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Experience the winning Track 5 implementation with real cross-chain swaps between Ethereum and Sui
+            Experience revolutionary cross-chain swaps with real Ethereum ↔ Sui transactions and atomic security
           </p>
         </div>
 

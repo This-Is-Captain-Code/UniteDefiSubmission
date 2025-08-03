@@ -2,15 +2,15 @@ import { Card } from "@/components/ui/card";
 
 export default function Footer() {
   const productLinks = [
-    "1inch dApp", "1inch Wallet", "Limit Orders", "Fusion Mode", "Cross-Chain Swaps"
+    "SuiBridge App", "Cross-Chain Swaps", "Move Contracts", "Security Audits", "Live Demo"
   ];
 
   const developerLinks = [
-    "Documentation", "API Reference", "GitHub", "Bug Bounty", "Hackathon"
+    "Smart Contracts", "API Reference", "GitHub", "Technical Docs", "Hackathon"
   ];
 
   const communityLinks = [
-    "Governance", "1INCH Token", "Forum", "Blog", "Help Center"
+    "Sui Network", "Ethereum Bridge", "Discord", "Blog", "Support"
   ];
 
   const legalLinks = [
@@ -24,13 +24,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-inch-blue to-inch-purple rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">1</span>
+              <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">S</span>
               </div>
-              <span className="text-xl font-bold">1inch Protocol</span>
+              <span className="text-xl font-bold">SuiBridge</span>
             </div>
             <p className="text-gray-400">
-              Uniting DeFi protocols for the most lucrative, fastest, and protected operations in decentralized finance. Now with cross-chain capabilities to Aptos.
+              Revolutionary cross-chain bridge enabling secure, fast, and atomic swaps between Ethereum and Sui Network with hashlock protection.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

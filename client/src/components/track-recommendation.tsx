@@ -40,10 +40,10 @@ export default function TrackRecommendation() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Crown className="w-8 h-8 text-yellow-500" />
-            <h2 className="text-4xl font-bold text-inch-dark dark:text-white">Winning Strategy Analysis</h2>
+            <h2 className="text-4xl font-bold text-inch-dark dark:text-white">Why SuiBridge Dominates</h2>
           </div>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Based on development complexity, ecosystem maturity, and competition analysis
+            Strategic analysis proving Sui Network as the optimal cross-chain solution
           </p>
         </div>
 
