@@ -13,6 +13,13 @@ export default function HeroSection() {
     },
   });
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 gradient-bg"></div>
@@ -43,13 +50,22 @@ export default function HeroSection() {
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Revolutionary Ethereum ↔ Sui cross-chain swaps with hashlock security, atomic operations, and lightning-fast settlement powered by Fusion+ technology.
+          Revolutionary Ethereum ↔ Sui cross-chain swaps with hashlock security, atomic operations, and lightning-fast settlement powered by SuiBridge technology.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-90 px-8 py-4 text-lg font-semibold">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-90 px-8 py-4 text-lg font-semibold"
+            onClick={() => scrollToSection('trading-interface')}
+          >
             Start Cross-Chain Swap
           </Button>
-          <Button size="lg" variant="outline" className="border-2 border-cyan-300 text-cyan-300 hover:bg-cyan-300 hover:text-gray-900 px-8 py-4 text-lg font-semibold">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-2 border-cyan-300 text-cyan-300 hover:bg-cyan-300 hover:text-gray-900 px-8 py-4 text-lg font-semibold"
+            onClick={() => scrollToSection('demo')}
+          >
             View Demo
           </Button>
         </div>

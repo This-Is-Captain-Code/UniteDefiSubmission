@@ -10,6 +10,7 @@ export default function TradingInterface() {
   const [toAmount, setToAmount] = useState("850.0");
   const [fromToken, setFromToken] = useState("USDC");
   const [toToken, setToToken] = useState("SUI");
+  const [isInitiating, setIsInitiating] = useState(false);
 
   const supportedTokens = {
     ethereum: { name: "Ethereum", symbol: "ETH", color: "from-blue-500 to-purple-600", amount: "2.45", network: "Ethereum" },
@@ -22,8 +23,27 @@ export default function TradingInterface() {
 
   const getCurrentToken = (tokenKey: string) => supportedTokens[tokenKey as keyof typeof supportedTokens] || supportedTokens.usdc;
 
+  const handleSwapClick = async () => {
+    setIsInitiating(true);
+    
+    try {
+      // Simulate API call for demo purposes
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Navigate to demo section to show swap progress
+      const demoElement = document.getElementById('demo');
+      if (demoElement) {
+        demoElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch (error) {
+      console.error('Swap initiation failed:', error);
+    } finally {
+      setIsInitiating(false);
+    }
+  };
+
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section id="trading-interface" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Ethereum ↔ Sui Bridge</h2>
@@ -102,8 +122,12 @@ export default function TradingInterface() {
                   </Card>
 
                   {/* Swap Button */}
-                  <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 text-lg font-semibold hover:opacity-90 transition-opacity">
-                    Initiate Cross-Chain Swap
+                  <Button 
+                    onClick={handleSwapClick}
+                    disabled={isInitiating || !fromAmount || !toAmount}
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 text-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
+                  >
+                    {isInitiating ? "Initiating Swap..." : "Initiate Cross-Chain Swap"}
                   </Button>
                 </div>
 
