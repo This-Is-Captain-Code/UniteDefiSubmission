@@ -13,8 +13,8 @@ export default function DeveloperPortal() {
     {
       icon: GitBranch,
       title: "Cross-Chain API",
-      description: "Fusion+ cross-chain swaps between Ethereum and Aptos with hashlock/timelock security. Bidirectional and atomic.",
-      color: "from-blue-500 to-teal-500"
+      description: "SuiBridge cross-chain swaps between Ethereum and Sui with hashlock/timelock security. Bidirectional and atomic.",
+      color: "from-cyan-500 to-blue-600"
     },
     {
       icon: List,
@@ -29,19 +29,19 @@ export default function DeveloperPortal() {
     "Hacken", "MixBytes", "Haechi Labs", "CoinFabrik"
   ];
 
-  const codeExample = `// Cross-chain swap from Ethereum to Aptos
+  const codeExample = `// Cross-chain swap from Ethereum to Sui
 const crossChainSwap = await fetch(
-  'https://api.1inch.io/fusion-plus/v1/swap',
+  'https://api.suibridge.io/v1/swap',
   {
     method: 'POST',
     body: JSON.stringify({
       fromChain: 'ethereum',
-      toChain: 'aptos',
-      fromTokenAddress: '0xA0b86a33E...',
-      toTokenAddress: '0x1::aptos_coin::AptosCoin',
+      toChain: 'sui',
+      fromToken: 'USDC',
+      toToken: 'SUI',
       amount: '1000000000000000000',
       fromAddress: userAddress,
-      toAddress: aptosAddress,
+      toAddress: suiAddress,
       slippage: 1
     })
   }
@@ -51,14 +51,14 @@ const swapData = await crossChainSwap.json();
 
 // Monitor swap status
 const status = await fetch(
-  \`https://api.1inch.io/fusion-plus/v1/status/\${swapData.swapId}\`
+  \`https://api.suibridge.io/v1/status/\${swapData.swapId}\`
 );
 
 console.log({
   hashlock: swapData.hashlock,
   timelock: swapData.timelock,
   ethereumTx: swapData.ethereumTx,
-  aptosTx: swapData.aptosTx,
+  suiTx: swapData.suiTx,
   status: status.status
 });`;
 
@@ -66,9 +66,9 @@ console.log({
     <section id="developers" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Build with 1inch Hackathon APIs</h2>
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Developer API</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Integrate cross-chain Fusion+ APIs for Ethereum-Aptos swaps with hashlock/timelock security. Perfect for the hackathon challenge.
+            Integrate SuiBridge cross-chain APIs for Ethereum ↔ Sui swaps with enterprise-grade security and reliability.
           </p>
         </div>
 

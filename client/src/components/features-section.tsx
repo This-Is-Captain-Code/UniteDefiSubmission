@@ -1,45 +1,45 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Network, List, Shield, Check } from "lucide-react";
+import { ArrowRightLeft, Shield, Zap, Code, TrendingUp, Lock, Check } from "lucide-react";
 
 export default function FeaturesSection() {
   const features = [
     {
-      icon: Network,
-      title: "Aggregation Protocol",
-      description: "Advanced Pathfinder Algorithm finds the best possible paths for token swaps by sourcing liquidity from multiple DEXs in the shortest possible time.",
-      gradient: "from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950",
-      borderColor: "border-blue-100 dark:border-blue-800",
-      iconGradient: "from-inch-blue to-inch-purple",
+      icon: ArrowRightLeft,
+      title: "Ethereum ↔ Sui Bridge",
+      description: "Seamlessly transfer assets between Ethereum and Sui networks with atomic security and instant settlement.",
+      gradient: "from-cyan-50 to-blue-50 dark:from-cyan-950 dark:to-blue-950",
+      borderColor: "border-cyan-100 dark:border-cyan-800",
+      iconGradient: "from-cyan-500 to-blue-600",
       benefits: [
-        "Multi-DEX sourcing",
-        "Market depth optimization", 
-        "Gas cost minimization"
-      ]
-    },
-    {
-      icon: List,
-      title: "Limit Order Protocol",
-      description: "The most innovative and flexible limit order swap opportunities in DeFi with zero fees and advanced conditional features.",
-      gradient: "from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950",
-      borderColor: "border-purple-100 dark:border-purple-800",
-      iconGradient: "from-inch-purple to-pink-500",
-      benefits: [
-        "Zero fees",
-        "Dynamic pricing",
-        "Stop-loss & trailing orders"
+        "Atomic swaps",
+        "Zero slippage", 
+        "Instant settlement"
       ]
     },
     {
       icon: Shield,
-      title: "Fusion Mode",
-      description: "Gasless trading with MEV protection. Professional market makers execute swaps efficiently while protecting users from MEV attacks.",
+      title: "Hashlock Security",
+      description: "Cryptographic hashlock protection ensures your funds are secure with zero counterparty risk during transfers.",
       gradient: "from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950",
       borderColor: "border-green-100 dark:border-green-800",
       iconGradient: "from-green-500 to-teal-500",
       benefits: [
-        "Gasless execution",
-        "MEV protection",
-        "Optimal rates"
+        "Zero counterparty risk",
+        "Cryptographic proof",
+        "Automatic refunds"
+      ]
+    },
+    {
+      icon: Zap,
+      title: "Lightning Fast",
+      description: "Experience sub-3 second finality with parallel execution on both Ethereum and Sui networks.",
+      gradient: "from-yellow-50 to-orange-50 dark:from-yellow-950 dark:to-orange-950",
+      borderColor: "border-yellow-100 dark:border-yellow-800",
+      iconGradient: "from-yellow-500 to-orange-500",
+      benefits: [
+        "Sub-3s finality",
+        "Parallel execution",
+        "High throughput"
       ]
     }
   ];
@@ -48,9 +48,9 @@ export default function FeaturesSection() {
     <section id="features" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Hackathon Track Features</h2>
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Core Features</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Cross-chain Fusion+ capabilities with hashlock/timelock security across all 4 hackathon tracks
+            Professional-grade cross-chain infrastructure with enterprise security and lightning-fast performance
           </p>
         </div>
 

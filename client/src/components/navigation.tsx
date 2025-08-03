@@ -27,26 +27,26 @@ export default function Navigation() {
           
           <div className="hidden md:flex items-center space-x-8">
             <button 
+              onClick={() => scrollToSection('demo')}
+              className="text-gray-600 dark:text-gray-300 hover:text-cyan-500 transition-colors"
+            >
+              Demo
+            </button>
+            <button 
+              onClick={() => scrollToSection('technology')}
+              className="text-gray-600 dark:text-gray-300 hover:text-cyan-500 transition-colors"
+            >
+              Technology
+            </button>
+            <button 
               onClick={() => scrollToSection('features')}
-              className="text-gray-600 dark:text-gray-300 hover:text-inch-blue transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-cyan-500 transition-colors"
             >
               Features
             </button>
             <button 
-              onClick={() => scrollToSection('protocols')}
-              className="text-gray-600 dark:text-gray-300 hover:text-inch-blue transition-colors"
-            >
-              Protocols
-            </button>
-            <button 
-              onClick={() => scrollToSection('metrics')}
-              className="text-gray-600 dark:text-gray-300 hover:text-inch-blue transition-colors"
-            >
-              Analytics
-            </button>
-            <button 
               onClick={() => scrollToSection('developers')}
-              className="text-gray-600 dark:text-gray-300 hover:text-inch-blue transition-colors"
+              className="text-gray-600 dark:text-gray-300 hover:text-cyan-500 transition-colors"
             >
               Developers
             </button>

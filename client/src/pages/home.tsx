@@ -1,10 +1,8 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
-import TrackRecommendation from "@/components/track-recommendation";
-import SuiFusionDemo from "@/components/sui-fusion-demo";
-import HackathonTracks from "@/components/hackathon-tracks";
+import SuiFusionDemo from "@/components/sui-fusion-demo"; 
+import TechnologySection from "@/components/technology-section";
 import FeaturesSection from "@/components/features-section";
-import MultichainSection from "@/components/multichain-section";
 import TradingInterface from "@/components/trading-interface";
 import MetricsDashboard from "@/components/metrics-dashboard";
 import DeveloperPortal from "@/components/developer-portal";
@@ -15,11 +13,9 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <TrackRecommendation />
       <SuiFusionDemo />
-      <HackathonTracks />
+      <TechnologySection />
       <FeaturesSection />
-      <MultichainSection />
       <TradingInterface />
       <MetricsDashboard />
       <DeveloperPortal />
