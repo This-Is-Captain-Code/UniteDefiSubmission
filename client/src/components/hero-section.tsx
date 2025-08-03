@@ -64,9 +64,9 @@ export default function HeroSection() {
             size="lg" 
             variant="outline" 
             className="border-2 border-cyan-300 text-cyan-300 hover:bg-cyan-300 hover:text-gray-900 px-8 py-4 text-lg font-semibold"
-            onClick={() => scrollToSection('demo')}
+            onClick={() => scrollToSection('live-swaps')}
           >
-            View Demo
+            Live Swaps
           </Button>
         </div>
         

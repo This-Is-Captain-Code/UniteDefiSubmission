@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 
 export default function Footer() {
   const productLinks = [
-    "SuiBridge App", "Cross-Chain Swaps", "Move Contracts", "Security Audits", "Live Demo"
+    "SuiBridge App", "Cross-Chain Swaps", "Move Contracts", "Security Audits", "Live Swaps"
   ];
 
   const developerLinks = [

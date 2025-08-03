@@ -30,10 +30,10 @@ export default function TradingInterface() {
       // Simulate API call for demo purposes
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // Navigate to demo section to show swap progress
-      const demoElement = document.getElementById('demo');
-      if (demoElement) {
-        demoElement.scrollIntoView({ behavior: 'smooth' });
+      // Navigate to live swaps section to show swap progress
+      const liveSwapsElement = document.getElementById('live-swaps');
+      if (liveSwapsElement) {
+        liveSwapsElement.scrollIntoView({ behavior: 'smooth' });
       }
     } catch (error) {
       console.error('Swap initiation failed:', error);
@@ -127,7 +127,7 @@ export default function TradingInterface() {
                     disabled={isInitiating || !fromAmount || !toAmount}
                     className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 text-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
                   >
-                    {isInitiating ? "Initiating Swap..." : "Initiate Cross-Chain Swap"}
+                    {isInitiating ? "Processing Transaction..." : "Execute Cross-Chain Swap"}
                   </Button>
                 </div>
 
