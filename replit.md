@@ -1,6 +1,6 @@
 # Overview
 
-This is a comprehensive 1inch Protocol hackathon project showcasing all 4 tracks for extending Fusion+ cross-chain swaps. Built with a full-stack TypeScript architecture, the application demonstrates cross-chain swap capabilities between Ethereum and multiple non-EVM blockchains (Aptos, Bitcoin family, Cosmos, Near) using hashlock/timelock security mechanisms. The project features bidirectional atomic swaps, modern DeFi interface design, analytics dashboards, and comprehensive developer tools covering all hackathon tracks.
+This is a comprehensive 1inch Protocol hackathon project showcasing all 7 tracks for extending Fusion+ cross-chain swaps. Built with a full-stack TypeScript architecture, the application demonstrates cross-chain swap capabilities between Ethereum and multiple non-EVM blockchains (Aptos, Bitcoin family, Cosmos, Near, Sui, Tron, Stellar) using hashlock/timelock security mechanisms. The project features bidirectional atomic swaps, strategic track analysis with Sui as the recommended choice, modern DeFi interface design, analytics dashboards, and comprehensive developer tools covering all hackathon tracks.
 
 # User Preferences
 

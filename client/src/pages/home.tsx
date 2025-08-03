@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
+import TrackRecommendation from "@/components/track-recommendation";
 import HackathonTracks from "@/components/hackathon-tracks";
 import FeaturesSection from "@/components/features-section";
 import MultichainSection from "@/components/multichain-section";
@@ -13,6 +14,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navigation />
       <HeroSection />
+      <TrackRecommendation />
       <HackathonTracks />
       <FeaturesSection />
       <MultichainSection />

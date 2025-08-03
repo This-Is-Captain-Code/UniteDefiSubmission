@@ -16,7 +16,9 @@ export default function HackathonTracks() {
         "Onchain execution demo on mainnet/testnet"
       ],
       stretchGoals: ["UI implementation", "Enable partial fills"],
-      status: "Featured Track"
+      status: "Featured Track",
+      difficulty: "Medium",
+      winPotential: "High"
     },
     {
       id: 2,
@@ -30,7 +32,9 @@ export default function HackathonTracks() {
         "Onchain execution demo on mainnet/testnet"
       ],
       stretchGoals: ["UI implementation", "Enable partial fills"],
-      status: "Bitcoin Family"
+      status: "Bitcoin Family",
+      difficulty: "Hard",
+      winPotential: "Very High"
     },
     {
       id: 3,
@@ -44,7 +48,9 @@ export default function HackathonTracks() {
         "Onchain execution demo on mainnet/testnet"
       ],
       stretchGoals: ["UI implementation", "Enable partial fills"],
-      status: "Cosmos Ecosystem"
+      status: "Cosmos Ecosystem",
+      difficulty: "Medium",
+      winPotential: "High"
     },
     {
       id: 4,
@@ -58,7 +64,57 @@ export default function HackathonTracks() {
         "Onchain execution demo on mainnet/testnet"
       ],
       stretchGoals: ["UI implementation", "Enable partial fills"],
-      status: "Near Protocol"
+      status: "Near Protocol",
+      difficulty: "Medium",
+      winPotential: "High"
+    },
+    {
+      id: 5,
+      title: "Track 5: Extend Fusion+ to Sui",
+      description: "Build a novel extension for 1inch Cross-chain Swap (Fusion+) that enables swaps between Ethereum and Sui.",
+      color: "from-cyan-500 to-blue-600",
+      borderColor: "border-cyan-200 dark:border-cyan-800",
+      requirements: [
+        "Preserve hashlock and timelock functionality",
+        "Bidirectional swap capability (Ethereum ↔ Sui)",
+        "Onchain execution demo on mainnet/testnet"
+      ],
+      stretchGoals: ["UI implementation", "Enable partial fills"],
+      status: "Sui Network",
+      difficulty: "Easy",
+      winPotential: "Very High"
+    },
+    {
+      id: 6,
+      title: "Track 6: Extend Fusion+ to Tron",
+      description: "Build a novel extension for 1inch Cross-chain Swap (Fusion+) that enables swaps between Ethereum and Tron.",
+      color: "from-red-500 to-orange-500",
+      borderColor: "border-red-200 dark:border-red-800",
+      requirements: [
+        "Preserve hashlock and timelock functionality",
+        "Bidirectional swap capability (Ethereum ↔ Tron)",
+        "Onchain execution demo on mainnet/testnet"
+      ],
+      stretchGoals: ["UI implementation", "Enable partial fills"],
+      status: "Tron Network",
+      difficulty: "Easy",
+      winPotential: "High"
+    },
+    {
+      id: 7,
+      title: "Track 7: Extend Fusion+ to Stellar",
+      description: "Build a novel extension for 1inch Cross-chain Swap (Fusion+) that enables swaps between Ethereum and Stellar.",
+      color: "from-indigo-500 to-purple-600",
+      borderColor: "border-indigo-200 dark:border-indigo-800",
+      requirements: [
+        "Preserve hashlock and timelock functionality",
+        "Bidirectional swap capability (Ethereum ↔ Stellar)",
+        "Onchain execution demo on mainnet/testnet"
+      ],
+      stretchGoals: ["UI implementation", "Enable partial fills"],
+      status: "Stellar Network",
+      difficulty: "Medium",
+      winPotential: "High"
     }
   ];
 
@@ -66,9 +122,9 @@ export default function HackathonTracks() {
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Hackathon Tracks Overview</h2>
+          <h2 className="text-4xl font-bold text-inch-dark dark:text-white mb-4">Complete Hackathon Tracks Overview</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Four distinct tracks to build cross-chain Fusion+ extensions. Each track requires hashlock/timelock security and bidirectional swap functionality.
+            Seven distinct tracks to build cross-chain Fusion+ extensions. Each track requires hashlock/timelock security and bidirectional swap functionality.
           </p>
         </div>
 

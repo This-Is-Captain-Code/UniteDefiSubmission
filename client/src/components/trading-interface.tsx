@@ -14,7 +14,10 @@ export default function TradingInterface() {
     track1: { name: "Aptos", symbol: "APT", color: "from-blue-500 to-teal-500", amount: "0.298" },
     track2: { name: "Bitcoin", symbol: "BTC", color: "from-orange-500 to-yellow-500", amount: "0.025" },
     track3: { name: "Cosmos", symbol: "ATOM", color: "from-purple-500 to-pink-500", amount: "42.5" },
-    track4: { name: "Near", symbol: "NEAR", color: "from-green-500 to-blue-500", amount: "125.0" }
+    track4: { name: "Near", symbol: "NEAR", color: "from-green-500 to-blue-500", amount: "125.0" },
+    track5: { name: "Sui", symbol: "SUI", color: "from-cyan-500 to-blue-600", amount: "850.0" },
+    track6: { name: "Tron", symbol: "TRX", color: "from-red-500 to-orange-500", amount: "15000" },
+    track7: { name: "Stellar", symbol: "XLM", color: "from-indigo-500 to-purple-600", amount: "8500" }
   };
 
   const currentTrack = tracks[selectedTrack as keyof typeof tracks];
@@ -42,10 +45,13 @@ export default function TradingInterface() {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="track1">Track 1</SelectItem>
-                        <SelectItem value="track2">Track 2</SelectItem>
-                        <SelectItem value="track3">Track 3</SelectItem>
-                        <SelectItem value="track4">Track 4</SelectItem>
+                        <SelectItem value="track1">Track 1: Aptos</SelectItem>
+                        <SelectItem value="track2">Track 2: Bitcoin</SelectItem>
+                        <SelectItem value="track3">Track 3: Cosmos</SelectItem>
+                        <SelectItem value="track4">Track 4: Near</SelectItem>
+                        <SelectItem value="track5">Track 5: Sui ⭐ RECOMMENDED</SelectItem>
+                        <SelectItem value="track6">Track 6: Tron</SelectItem>
+                        <SelectItem value="track7">Track 7: Stellar</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
